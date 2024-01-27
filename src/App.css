@@ -1,3 +1,6 @@
+/* 
+Before CSS, Anything below this line came in from the create react app command
+
 .App {
   text-align: center;
 }
@@ -35,4 +38,4 @@
   to {
     transform: rotate(360deg);
   }
-}
+} */
