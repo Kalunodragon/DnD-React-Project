@@ -1,23 +1,19 @@
+import { useEffect, useState } from 'react';
 import '../App.css';
 
 function App() {
+  const [state, setState] = useState(null)
+
+  useEffect(()=>{
+    fetch('https://www.dnd5eapi.co/api/magic-items/')
+    .then(response=>response.json())
+    .then(data=>console.log(data.results))
+  },[])
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <h1>TESTING</h1>
+    </>
   );
 }
 
