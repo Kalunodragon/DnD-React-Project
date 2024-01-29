@@ -1,18 +1,25 @@
-import { useEffect, useState } from 'react';
+import { createContext, useEffect, useState } from 'react';
+import { Routes, Route } from "react-router-dom";
 import '../App.css';
 
+export const itemInitialContext = createContext(null)
+
 function App() {
-  const [state, setState] = useState(null)
+  const [itemInitial, setItemInitial] = useState(null)
 
   useEffect(()=>{
     fetch('https://www.dnd5eapi.co/api/magic-items/')
     .then(response=>response.json())
-    .then(data=>console.log(data.results))
+    .then(data=>setItemInitial(data.results))
   },[])
 
   return (
     <>
-      <h1>TESTING</h1>
+      <itemInitialContext.Provider value={itemInitial}>
+        <Routes>
+          <Route path="/" element={ <h1>404 TESTING PAGE -- DND TOOL IS ON A DIFFERENT URL</h1> }/>
+        </Routes>
+      </itemInitialContext.Provider>
     </>
   );
 }
