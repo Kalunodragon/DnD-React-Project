@@ -1,6 +1,7 @@
 import { createContext, useEffect, useState } from 'react';
 import { Routes, Route } from "react-router-dom";
 import '../App.css';
+import Testing from "./Testing.js"
 
 export const itemInitialContext = createContext(null)
 
@@ -18,6 +19,7 @@ function App() {
       <itemInitialContext.Provider value={itemInitial}>
         <Routes>
           <Route path="/" element={ <h1>404 TESTING PAGE -- DND TOOL IS ON A DIFFERENT URL</h1> }/>
+          <Route path="/testing" element={ <Testing /> }/>
         </Routes>
       </itemInitialContext.Provider>
     </>
