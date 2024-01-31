@@ -18,7 +18,7 @@ function App() {
     <>
       <itemInitialContext.Provider value={itemInitial}>
         <Routes>
-          <Route path="/" element={ <h1>404 TESTING PAGE -- DND TOOL IS ON A DIFFERENT URL</h1> }/>
+          <Route path="/" element={ <h1>Still building main page</h1> }/>
           <Route path="/testing" element={ <Testing /> }/>
         </Routes>
       </itemInitialContext.Provider>
